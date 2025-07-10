@@ -58,13 +58,13 @@ jobs:
       -
         name: Kosli report proto artifact
         run: |
-         kosli attest artifact \
+          kosli attest artifact buf.image \
             --artifact-type gimmyxd/buf-buid \
             --name proto-bindings \
-            --flow ${{env.FLOW_NAME}} \
-            --trail $(git rev-parse HEAD)
+            --flow "${{ env.FLOW_NAME }}" \
+            --trail "$(git rev-parse HEAD)" \
             --api-token "${{ env.KOSLI_API_TOKEN }}" \
-            --org ${{env.KOSLI_ORG}}
+            --org "${{ env.KOSLI_ORG }}"
 
   trigger-dispatches:
     runs-on: ubuntu-latest
