@@ -97,6 +97,6 @@ jobs:
           kosli attest proto-workflow-dispatch \
             --name ${{ matrix.cfg.project }} \
             --flow "${{ env.FLOW_NAME }}" \
-            --trail "$(git rev-parse HEAD)" \
+            --trail "${{ github.ref_name }}" \
             --api-token "${{ env.KOSLI_API_TOKEN }}" \
             --org "${{ env.KOSLI_ORG }}"
