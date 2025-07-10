@@ -54,13 +54,10 @@ jobs:
         name: Kosli report proto artifact
         run: |
          kosli attest artifact \
-            --artifact-type generic \
+            --artifact-type gimmyxd/buf-buid \
             --name proto-bindings \
             --flow ${{env.FLOW_NAME}} \
-            --build-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-            --commit "${{ github.sha }}" \
-            --fingerprint "${{ github.ref_name }}" \
-            --attestation-type version_tag \
+            --trail $(git rev-parse HEAD)
             --api-token "${{ env.KOSLI_API_TOKEN }}" \
             --org ${{env.KOSLI_ORG}}
 
