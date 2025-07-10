@@ -94,8 +94,8 @@ jobs:
       -
         name: Kosli report worflow dispatch
         run: |
-          kosli attest generic proto-workflow-dispatch \
-            --name ${{ matrix.cfg.project }} \
+          kosli attest generic \
+            --name proto-workflow-dispatch-${{ matrix.cfg.project }} \
             --flow "${{ env.FLOW_NAME }}" \
             --trail "${{ github.ref_name }}" \
             --api-token "${{ env.KOSLI_API_TOKEN }}" \
