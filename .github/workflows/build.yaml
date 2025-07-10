@@ -59,7 +59,7 @@ jobs:
         name: Kosli report proto artifact
         run: |
           kosli attest artifact buf.image \
-            --artifact-type gimmyxd/buf-buid \
+            --artifact-type file \
             --name proto-bindings \
             --flow "${{ env.FLOW_NAME }}" \
             --trail "$(git rev-parse HEAD)" \
