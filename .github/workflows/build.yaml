@@ -58,8 +58,8 @@ jobs:
       -
         name: Kosli report proto artifact
         run: |
-          kosli attest artifact buf.image \
-            --artifact-type file \
+          kosli attest artifact proto \
+            --artifact-type dir \
             --name proto-bindings \
             --flow "${{ env.FLOW_NAME }}" \
             --trail "$(git rev-parse HEAD)" \
